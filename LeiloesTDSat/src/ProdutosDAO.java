@@ -45,44 +45,13 @@ public class ProdutosDAO {
 
             // 3. Executa o comando SQL
             prep.executeUpdate();
-
+            
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso! ");
+            
         } catch (SQLException e) {
             // Informa sobre o erro
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar produto: " + e.getMessage());
 
         }
-    }
-    
-
-    public ArrayList<ProdutosDTO> listarProdutos() {
-        ArrayList<ProdutosDTO> listagem = new ArrayList<>();
-       // 1. Comando SQL para selecionar todos os dados
-        String sql = "SELECT * FROM produtos";
-
-        try {
-            prep = conn.prepareStatement(sql);
-            
-            // 2. Executa a consulta e armazena o resultado
-            resultset = prep.executeQuery();
-
-            // 3. Percorre o resultado da consulta linha por linha
-            while (resultset.next()) {
-                // Cria um objeto DTO para cada produto encontrado
-                ProdutosDTO produto = new ProdutosDTO();
-                
-                // Pega os dados de cada coluna da linha atual e coloca no objeto
-                produto.setId(resultset.getInt("id"));
-                produto.setNome(resultset.getString("nome"));
-                produto.setValor(resultset.getInt("valor"));
-                produto.setStatus(resultset.getString("status"));
-                
-                // Adiciona o objeto preenchido na lista
-                listagem.add(produto);
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro ao listar produtos: " + e.getMessage());
-        }        
-        return listagem;
-    }
+    }   
 }
