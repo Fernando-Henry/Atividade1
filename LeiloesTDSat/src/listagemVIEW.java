@@ -38,7 +38,7 @@ public class listagemVIEW extends javax.swing.JFrame {
         id_produto_venda = new javax.swing.JTextPane();
         btnVender = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btnVendas = new javax.swing.JButton();
+        btnConsultarVendas = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -71,10 +71,10 @@ public class listagemVIEW extends javax.swing.JFrame {
             }
         });
 
-        btnVendas.setText("Consultar Vendas");
-        btnVendas.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultarVendas.setText("Consultar Vendas");
+        btnConsultarVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVendasActionPerformed(evt);
+                btnConsultarVendasActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class listagemVIEW extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btnVoltar)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConsultarVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -127,7 +127,7 @@ public class listagemVIEW extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVendas)
+                    .addComponent(btnConsultarVendas)
                     .addComponent(btnVoltar))
                 .addGap(17, 17, 17))
         );
@@ -146,10 +146,10 @@ public class listagemVIEW extends javax.swing.JFrame {
         listarProdutos();
     }//GEN-LAST:event_btnVenderActionPerformed
 
-    private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
-        //vendasVIEW vendas = new vendasVIEW(); 
-        //vendas.setVisible(true);
-    }//GEN-LAST:event_btnVendasActionPerformed
+    private void btnConsultarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarVendasActionPerformed
+        VendasVIEW telaVendas = new VendasVIEW();
+        telaVendas.setVisible(true);                
+    }//GEN-LAST:event_btnConsultarVendasActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.dispose();
@@ -157,7 +157,7 @@ public class listagemVIEW extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVendas;
+    private javax.swing.JButton btnConsultarVendas;
     private javax.swing.JButton btnVender;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JTextPane id_produto_venda;
