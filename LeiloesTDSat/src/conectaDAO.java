@@ -24,11 +24,7 @@ public class conectaDAO {
             String url = "jdbc:mysql://localhost:3306/UC11";
             String user = "root";
             String password = "";
-            conn = DriverManager.getConnection(url, user, password);
-            
-            System.out.println("Conexão realizada com banco de dados realizada com sucesso!");
-                    
-
+            conn = DriverManager.getConnection(url, user, password);                                           
         } catch (ClassNotFoundException ex) {
             // Erro caso a biblioteca (driver .jar) não seja encontrada.
             JOptionPane.showMessageDialog(null, "Erro: Driver MySQL não encontrado!");

@@ -90,4 +90,35 @@ public class ProdutosDAO {
         // 4. Retorna a lista preenchida (ou vazia, se não houver dados ou ocorrer erro)
         return listagem;
     }
+    
+    /**
+     * Atualiza o status de um produto para "Vendido" no banco de dados.
+     * @param idProduto O ID do produto que será vendido.
+     * @return true se a operação for bem-sucedida, false caso contrário.
+     */
+    public boolean venderProduto(int idProduto) {
+        // 1. Comando SQL para atualizar o status do produto com base no ID
+        String sql = "UPDATE produtos SET status = ? WHERE id = ?";
+
+        try {
+            // 2. Prepara o comando
+            prep = conn.prepareStatement(sql);
+            
+            // 3. Define os parâmetros: o novo status e o ID do produto
+            prep.setString(1, "Vendido");
+            prep.setInt(2, idProduto);
+
+            // 4. Executa a atualização
+            // executeUpdate() retorna o número de linhas que foram afetadas no banco.
+            int rowsAffected = prep.executeUpdate();
+
+            // 5. Verifica se alguma linha foi realmente atualizada.
+            // Se rowsAffected for maior que 0, significa que a venda foi registrada.
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao vender produto: " + e.getMessage());
+            return false;
+        }
+    }
 }
